@@ -3,10 +3,8 @@ import React from "react";
 function ClockApp(){
     const [amount, setAmount] = React.useState();
     const [flipped, setFlipped] = React.useState();
-    const onChange = (event) => {
-        setAmount(event.target.value);
-    };
-
+    
+    const onChange = (event) => setAmount(event.target.value);
     const reset = () => setAmount(0);
     const onFlip = () => setFlipped((current) => !current);
 
@@ -26,6 +24,6 @@ function ClockApp(){
         </>
     );
     return (<Clock/>);
-}
+};
 
 export default ClockApp;

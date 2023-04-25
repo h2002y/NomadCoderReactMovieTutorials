@@ -16,7 +16,7 @@ function countUp(){
   root.render(
       <AppOne />
   );
-}
+};
 
 const Button = () => (
   <button onClick={countUp}>Click me!</button>
@@ -33,7 +33,7 @@ function AppOne() {
       <Button />
     </div>
   );
-}
+};
 
 /** React useState render by data change 
  * 
@@ -81,7 +81,7 @@ function AppTwo(){
     // useState modifier함수 안에
     // 변수 대신 함수를 사용하면 react는 current값이 현재 값이라는 것을 보장해준다.
     setCounterTwo((current) => current + 1);
-  }
+  };
   
   const ButtonTwo = () => (
     <button onClick={countUpTwo}>Click me! by useState</button>
@@ -97,6 +97,6 @@ function AppTwo(){
       <h2>{counterTwo}</h2>
     </div>
   );
-}
+};
 
 export {AppOne, AppTwo};
