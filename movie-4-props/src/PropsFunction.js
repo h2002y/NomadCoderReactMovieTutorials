@@ -39,12 +39,17 @@ import React, { useCallback } from "react";
  * 함수를 props로 전달받는 Component가 리렌더링이 일어나지 않는다.
  */
 
+const Button = ({onClick, text}) => {
+    console.log(text, "was rendered");
+    return (<button onClick={onClick}>{text}</button>);
+};
+
 function PropsFunction() {
   const [value, setValue] = React.useState("Save Changes");
   const [counter, setCounter] = React.useState(0);
 
-  const changeValue = React.useCallback(() => setValue("Revert Changes"), []);
-  const changeCounter = React.useCallback(() => setCounter((curr) => curr + 1), []);
+  const changeValue = () => setValue("Revert Changes");
+  const changeCounter = () => setCounter((curr) => curr + 1);
 
   return (
     <>
@@ -52,12 +57,9 @@ function PropsFunction() {
       <h4>Passing props function and useState!</h4>
       <h5>Using same Button Component</h5>
       <h5>See console to check re-rendering</h5>
-      {/* <Button onClick={changeValue} text={value} />
-      <Button onClick={changeCounter} text={counter} /> */}
-      <h4>Below are the React.memo with useCallback</h4>
-      <MemorizedBtn onClick={changeValue} text={value} />
-      <MemorizedBtn text="Continue" />
-      <MemorizedBtn onClick={changeCounter} text={counter} />
+      <Button text={value} onClick={changeValue} />
+      <Button text={counter} onClick={changeCounter} />
+      <Button text="Continue" />
     </>
   );
 }
