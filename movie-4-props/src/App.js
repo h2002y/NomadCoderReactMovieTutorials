@@ -20,6 +20,9 @@
  * Component 내에서 속성에 접근할 시
  * props.속성명 으로 접근할 수 있다.
  * 
+ * 또한 props의 이름과 jsx 속성명이 같다면 jsx 속성명만 사용해도 된다.
+ * ex) fontSize: fontSize => fontSize
+ * 
  */
 
 function App() {
